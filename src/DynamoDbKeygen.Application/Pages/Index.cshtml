@@ -1,10 +1,44 @@
 ﻿@page
 @model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form method="post">
+    <div class="mb-3">
+        <label for="rootNamespace" class="form-label">Root Namespace</label>
+        <input type="text" class="form-control" name="rootNamespace">
+    </div>
+    <div class="mb-3">
+        <label for="rootNamespace" class="form-label">Root Identifier</label>
+        <input type="text" class="form-control" name="rootIdentifier">
+    </div>
+    <div class="mb-3">
+        <label for="rootNamespace" class="form-label">Domain Namespace</label>
+        <input type="text" class="form-control" name="domainNamespace">
+    </div>
+    <div class="mb-3">
+        <label for="rootNamespace" class="form-label">Domain Identifier</label>
+        <input type="text" class="form-control" name="domainIdentifier">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if (Model.ViewModel.RootNamespace is not null)
+{
+    <div class="form-floating input-group mb-3">
+        <input disabled type="text" id="generatedPk" class="form-control" value="@Model.ViewModel.RootNamespace#@Guid.NewGuid().ToString()">
+        <label for="generatedSk">Example Partition Key</label>
+        <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText(document.querySelector('#generatedPk').value)">Copy</button>
+    </div>
+}
+
+@if (Model.ViewModel.DomainNamespace is not null)
+{
+    <div class="form-floating input-group mb-3">
+        <input disabled type="text" id="generatedSk" class="form-control" value="@Model.ViewModel.DomainNamespace#@Guid.NewGuid().ToString()">
+        <label for="generatedSk">Example Sort Key</label>
+        <button class="btn btn-outline-secondary" type="button" onclick="navigator.clipboard.writeText(document.querySelector('#generatedSk').value)">Copy</button>
+    </div>
+}
