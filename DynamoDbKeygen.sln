@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{205EB196-F388-4AE9-83BB-A504C725BA71}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDbKeygen.App", "src\DynamoDbKeygen.App\DynamoDbKeygen.App.csproj", "{298092AD-7CE0-4ADF-8530-A0A5A50AF013}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamoDbKeygen.Application", "src\DynamoDbKeygen.Application\DynamoDbKeygen.Application.csproj", "{298092AD-7CE0-4ADF-8530-A0A5A50AF013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
